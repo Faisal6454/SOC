@@ -1,0 +1,94 @@
+/* NavBar.css */
+.navbar {
+  height: 50px;
+  background-color: whitesmoke;
+  color: rgb(0, 0, 0);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 202px; /* Adjusted width of the sidebar */
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.icon-container {
+  position: relative;
+  margin-top: 8px;
+}
+
+.icon {
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(250, 70, 70);
+  border-radius: 50%;
+  border: 1px solid whitesmoke;
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-bar-icon {
+  position: absolute;
+  color: #DCDFE3;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+.search-bar-input {
+  font-size: small;
+  border: 1px solid #DCDFE3;
+  border-radius: 8px;
+  width: 18rem;
+  height: 2.5rem;
+  padding-left: 2.75rem;
+  padding-right: 1rem;
+  outline: none;
+}
+
+.toggle-button {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    left: 0;
+  }
+
+  .navbar-right {
+    display: none;
+  }
+
+  .toggle-button {
+    display: block;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}

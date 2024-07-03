@@ -1,0 +1,65 @@
+/* ToolsForm.css */
+.tools-container {
+  /* padding: 16px; */
+  max-width: 100%;
+  margin: 10px;
+  border-radius: 8px;
+  /* background-color: #ffffff; */
+  /* border: 1px solid #e0e0e0; */
+  margin-top: 25px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: medium;
+  margin-bottom: 8px;
+}
+
+.tools-input {
+  width: 100%;
+  max-width: 400px !important;
+  padding: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  width: 100%;
+  max-width: 141px;
+  height: 48px;
+  border-radius: 8px;
+  padding: 12px 50px;
+  align-self: flex-start;
+  background-color: #1e88e5;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .tools-input {
+    width: 100%;
+  }
+}

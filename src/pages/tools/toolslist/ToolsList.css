@@ -1,0 +1,136 @@
+/* Tools.css */
+
+.main-content {
+  padding: 20px;
+}
+
+.t-btn {
+  position: relative;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding-top: 1rem;
+}
+
+.tools-list-container {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.tools-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tools-list-header h2 {
+  margin: 0;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.icon-filter:before {
+  content: "\f0b0"; /* FontAwesome filter icon */
+  font-family: "FontAwesome";
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.responsive-table th,
+.responsive-table td {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+  text-align: left;
+}
+
+.responsive-table th {
+  background-color: #f4f4f4;
+}
+
+.status {
+  text-transform: capitalize;
+}
+
+.details-button {
+  background-color: #006AFF;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.add-tools-btn {
+  background-color: #006AFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.add-tools-btn:hover {
+  background-color: #3461f3;
+}
+
+.tools-logo {
+   width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+/*responsive*/
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}

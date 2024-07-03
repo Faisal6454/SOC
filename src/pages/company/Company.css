@@ -1,0 +1,21 @@
+/* Company.css */
+
+.company .add-company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+}
+
+.company .btn {
+    width: 183px;
+    height: 53px;
+    padding: 12px 15px 12px 15px;
+    border-radius: 8px;
+    border: 1px;
+    opacity: 0px;
+    background: rgba(232, 232, 232, 1);
+    font-weight: 500;
+    font-size: larger;
+    cursor: pointer;
+}
