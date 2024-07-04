@@ -3,11 +3,12 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { DataProvider } from "./context/Context";
 import Layout from "./components/shared/Layout";
-import Login from "./pages/login/Login";
+import LoginForm from "./pages/login/LoginForm";
 import Otp from "./pages/Otp/OTP";
 // import Dashboard from "./pages/dashboard/Dashboard";
 import Company from "./pages/company/Company";
 import Tools from "./pages/tools/Tools";
+
 
 function App() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -23,7 +24,7 @@ function App() {
           <div className="grid-container">
             <Router>
               <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/" element={<LoginForm />} />
                 <Route path="/otp" element={<Otp />} />
                 <Route path="/layout" element={<Layout />}>
                   {/* <Route index element={<Dashboard />} /> */}
