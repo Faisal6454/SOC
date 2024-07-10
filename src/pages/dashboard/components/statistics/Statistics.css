@@ -1,0 +1,28 @@
+.statistics {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .statistics h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Add more styles for individual statistics */
+  
+
+  .transactions {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .transactions h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Add more styles for individual transactions */
+  

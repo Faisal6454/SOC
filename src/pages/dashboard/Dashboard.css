@@ -1,0 +1,22 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .dashboard-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .left-side, .right-side {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .right-side {
+    max-width: 500px;
+  }
+  

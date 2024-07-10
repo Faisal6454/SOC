@@ -1,0 +1,72 @@
+.card {
+    display: grid;
+    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+   }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card-icon {
+    font-size: 2rem;
+    color: #007bff;
+  }
+  
+  .card-content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .card-title {
+    line-break: auto;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #333;
+  }
+  
+  .card-value {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
+    /* color: #007bff; */
+    margin-top: 8px;
+  }
+  
+  .percentage-symbol {
+    font-size: 1rem;
+  }
+
+  .card-more {
+    display: flex;
+    align-items: center;
+    background: #007bff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+  
+  
+  .more-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .more-button:hover {
+    color: #0056b3;
+  }
+  
