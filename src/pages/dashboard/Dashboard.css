@@ -1,22 +1,46 @@
 .dashboard {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #f8f8f8;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f8f8f8;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column; /* Change to column on small screens */
+  gap: 20px; /* Reduced gap for smaller screens */
+  margin-top: 20px;
+}
+
+.left-side, .right-side {
+  width: 100%; /* Take full width on small screens */
+  margin: 0; /* Remove margins on small screens */
+}
+
+.left-side {
+  max-width: 100%; /* Full width by default */
+}
+
+.right-side {
+  max-width: 100%; /* Full width by default */
+}
+
+@media (min-width: 768px) {
   .dashboard-content {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    flex-direction: row;
+    gap: 40px; /* Switch back to row layout on larger screens */
   }
-  
+
   .left-side, .right-side {
-    flex: 1;
-    margin-right: 20px;
+    flex: 1; /* Equal flex distribution */
+    margin: 0 10px; /* Adjusted margins */
   }
-  
+
+  .left-side {
+    max-width: 60%; /* Maintain max-width on larger screens */
+  }
+
   .right-side {
-    max-width: 500px;
+    max-width: 40%; /* Maintain max-width on larger screens */
   }
-  
+}

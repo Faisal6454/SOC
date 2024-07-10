@@ -1,12 +1,11 @@
-import React from 'react';
-import './Cards.css';
+import React from "react";
+import "./Cards.css";
 
-const Cards = ({ icon, title, value, isPercentage }) => {
-  console.log("title",title)
+const Cards = ({ icon, title, value, image, isPercentage }) => {
   return (
     <div className="card">
       <div className="card-icon">
-        {icon}
+        {image ? <img src={image} alt={title} className="card-image" /> : icon}
       </div>
       <div className="card-content">
         <div className="card-title">{title}</div>
@@ -14,8 +13,8 @@ const Cards = ({ icon, title, value, isPercentage }) => {
           {value}
           {isPercentage && <span className="percentage-symbol">%</span>}
           <div className="card-more">
-        <button className="more-button">{">"}</button>
-      </div>
+            <button className="more-button">{">"}</button>
+          </div>
         </div>
       </div>
     </div>

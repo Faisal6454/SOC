@@ -7,8 +7,8 @@
 }
 
 .Sidebar {
-  width: 200px; /* Adjust as needed */
-  flex-basis: 200px;
+  width: 250px; /* Adjust as needed */
+  flex-basis: 250px;
   background-color: #f8f9fa; /* Adjust as needed */
   z-index: 1;
 }
@@ -31,7 +31,7 @@
   flex: 1;
   overflow: hidden;
   margin-top: 60px; /* Adjust to navbar height */
-  margin-left: 200px; /* Adjust to sidebar width */
+  margin-left: 250px; /* Adjust to sidebar width */
 }
 
 .Layout-Outlet {

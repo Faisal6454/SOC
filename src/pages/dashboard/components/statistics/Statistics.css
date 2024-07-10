@@ -1,28 +1,108 @@
 .statistics {
-    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  .statistics h2 {
-    margin-bottom: 20px;
-  }
+ .statistics-section {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.software-statistics {
+  margin-bottom: 20px;
+}
+
+.software-statistics h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.stat-item {
+  margin-bottom: 20px;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  background: #e0e0e0;
+  border-radius: 10px;
+  height: 12px;
+  position: relative;
+}
+
+.progress {
+  background: #007bff;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.percentage {
+  font-size: 14px;
+  color: #007bff;
+}
+
+.today-transactions {
+  
+}
+
+.today-transactions h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.transaction-icon {
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.transaction-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.transaction-details {
+  flex: 1;
+}
+
+.transaction-type {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.transaction-time {
+  display: block;
+  font-size: 12px;
+  color: gray;
+}
+
+.transaction-amount {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.transaction-amount.positive {
+  color: green;
+}
+
+.transaction-amount.negative {
+  color: red;
+}
+
   
   /* Add more styles for individual statistics */
   
 
-  .transactions {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-  }
-  
-  .transactions h2 {
-    margin-bottom: 20px;
-  }
-  
-  /* Add more styles for individual transactions */
-  
+ 

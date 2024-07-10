@@ -6,7 +6,7 @@
   padding-top: 20px;
   padding: 1px;
   position: fixed;
-  width: 200px;
+  width: 250px;
   top: 0;
   left: 0;
   overflow-x: hidden;
@@ -33,6 +33,7 @@
   list-style-type: none;
   padding: 0 14px;
   flex-grow: 1;
+  font-size: larger;
 }
 
 .sidebar ul li {
@@ -65,6 +66,7 @@
 
 .sidebar-footer {
   padding: 0 14px 20px;
+  font-size: larger;
 }
 
 .sidebar-footer .logout {
