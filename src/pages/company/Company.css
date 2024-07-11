@@ -6,13 +6,13 @@
 
 .c-btn {
   position: relative;
-  /* right: 0; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 1rem;
   padding: 1rem;
+  flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 .company-list-container {
@@ -23,7 +23,6 @@
 }
 
 .table-container {
-  /* margin-top: 20px; */
   overflow-x: auto;
 }
 
@@ -31,16 +30,6 @@
   width: 100%;
   border-collapse: collapse;
 }
-
-/* .responsive-table th,
-.responsive-table td {
-  padding: 8px;
-}
-
-.responsive-table th {
-  background: #f4f4f4;
-} */
-
 
 .details-button {
   background-color: #006AFF;
@@ -114,62 +103,126 @@
   border-radius: 50%;
 }
 
-
-body{
-	margin:0;
-	font-family: sans-serif;
+body {
+  margin: 0;
+  font-family: sans-serif;
 }
 
-*{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-.table{
-	width: 100%;
-	border-collapse: collapse;
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.table td,.table th{
-  padding:12px 15px;
-  border:1px solid #ddd;
+.table td,
+.table th {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
   text-align: center;
-  font-size:16px;
+  font-size: 16px;
 }
 
-.table th{
-	background-color: darkblue;
-	color:#ffffff;
+.table th {
+  background: rgba(0, 106, 255, 0.05);
+  color: #006AFF;
 }
 
-.table tbody tr:nth-child(even){
-	background-color: #f5f5f5;
+.table tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
 }
 
+/* Prevent email overflow */
+.table td.email-cell {
+  text-align: center;
+  padding: 12px 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 350px; /* Adjust as necessary */
+}
 
+/* Refresh button CSS */
 
-/* new btn css */
+.refresh-btn.spinning svg {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Export button and dropdown */
+
+.export-btn-container {
+  position: relative;
+  display: inline-block;
+}
+
+.export-dropdown {
+  display: none; /* Hide by default */
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.export-btn-container:hover .export-dropdown {
+  display: block; /* Show on hover */
+}
+
+.export-option {
+  padding: 8px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  display: block;
+  border: none;
+  background: none;
+  text-align: left;
+  width: 100%;
+}
+
+.export-option:hover {
+  background-color: #006AFF;
+  color: white;
+}
+
+/* Other CSS styles */
 
 .filter-btns {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 .ref-sec {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap; /* Ensures responsiveness */
 }
 
 .filter-btn,
 .add-company-btn,
 .refresh-btn,
 .export-btn {
-  background-color: #007bff;
-  color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.filter-btn.active {
+  background-color: #006AFF;
+  color: white;
 }
 
 .refresh-btn,
@@ -183,45 +236,80 @@ body{
 .refresh-btn:hover,
 .export-btn:hover {
   background-color: #0056b3;
+  color: white;
 }
 
+/* Responsive styles */
 
+@media (max-width: 768px) {
+  .c-btn {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
-/*responsive*/
+  .filter-btns,
+  .ref-sec {
+    justify-content: space-between;
+    width: 100%;
+  }
 
-@media(max-width: 500px){
-	.table thead{
-		display: none;
-	}
+  .filter-btn,
+  .add-company-btn,
+  /* .refresh-btn, */
+  .export-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-	.table, .table tbody, .table tr, .table td{
-		display: block;
-		width: 100%;
-	}
-	.table tr{
-		margin-bottom:15px;
-	}
-	.table td{
-		text-align: right;
-		padding-left: 50%;
-		text-align: right;
-		position: relative;
-	}
-	.table td::before{
-		content: attr(data-label);
-		position: absolute;
-		left:0;
-		width: 50%;
-		padding-left:15px;
-		font-size:15px;
-		font-weight: bold;
-		text-align: left;
-	}
+  .refresh-btn {
+    width: 90px;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
 }
 
+@media (max-width: 500px) {
+  .table thead {
+    display: none;
+  }
 
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
 
+  .table tr {
+    margin-bottom: 15px;
+  }
 
+  .table td {
+    text-align: right;
+    padding-left: 50%;
+    text-align: right;
+    position: relative;
+  }
 
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
 
+  .table td.email-cell {
+    text-align: right;
+  }
 
+  .company-image {
+    /* display: none; */
+    width: 25px;
+    height: 25px;
+  }
+}

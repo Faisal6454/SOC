@@ -37,10 +37,10 @@
   }
 
   .left-side {
-    max-width: 60%; /* Maintain max-width on larger screens */
+    max-width: 70%; /* Maintain max-width on larger screens */
   }
 
   .right-side {
-    max-width: 40%; /* Maintain max-width on larger screens */
+    max-width: 30%; /* Maintain max-width on larger screens */
   }
 }

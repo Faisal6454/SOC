@@ -4,8 +4,13 @@ import * as Yup from "yup";
 import "./LoginForm.css";
 import LoginImg from "../../assets/images/LoginForm.png"; // Ensure the image path is correct
 import Logo from "../../assets/images/Logo.png";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -29,6 +34,12 @@ const LoginForm = () => {
     console.log("Form data", values);
   };
 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    // Assume login is successful
+    navigate('/otp');
+  };
+
   return (
     <div className="container">
       <div className="box-area">
@@ -47,13 +58,16 @@ const LoginForm = () => {
             onSubmit={onSubmit}
           >
             {() => (
-              <Form>
+              <Form onSubmit={handleLogin}>
                 <div className="input-group">
                   <Field
                     type="email"
                     id="email"
                     name="email"
                     placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
                     className="form-control"
                   />
                   <ErrorMessage
@@ -68,6 +82,9 @@ const LoginForm = () => {
                     id="password"
                     name="password"
                     placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
                     className="form-control"
                   />
                   <i

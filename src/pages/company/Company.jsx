@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Company.css";
 import { FiAlignCenter, FiRefreshCw, FiDownload } from "react-icons/fi"; // Importing icons
 
 const CompanyList = (props) => {
+
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+
+  const handleRefreshClick = () => {
+    setIsSpinning(true);
+    setTimeout(() => {
+      setIsSpinning(false);
+      // Add your refresh logic here
+    }, 1000); // Adjust timeout duration as needed
+  };
+
+  const handleExport = (format) => {
+    console.log(`Exporting as ${format}`);
+    // Add your export logic here
+  };
+
   const defaultCompanies = [
     {
       image:
@@ -40,17 +59,62 @@ const CompanyList = (props) => {
       <div className="main-content">
         <div className="c-btn">
           <div className="filter-btns">
-            <button className="filter-btn">All</button>
-            <button className="filter-btn">Active</button>
-            <button className="filter-btn">Inactive</button>
+            <button
+              className={`filter-btn ${activeFilter === "All" ? "active" : ""}`}
+              onClick={() => setActiveFilter("All")}
+            >
+              All
+            </button>
+            <button
+              className={`filter-btn ${activeFilter === "Active" ? "active" : ""}`}
+              onClick={() => setActiveFilter("Active")}
+            >
+              Active
+            </button>
+            <button
+              className={`filter-btn ${activeFilter === "Inactive" ? "active" : ""}`}
+              onClick={() => setActiveFilter("Inactive")}
+            >
+              Inactive
+            </button>
           </div>
           <div className="ref-sec">
-            <button className="refresh-btn">
+          <button
+              className={`refresh-btn ${isSpinning ? "spinning" : ""}`}
+              onClick={handleRefreshClick}
+            >
               <FiRefreshCw size={16} />
             </button>
-            <button className="export-btn">
-              <FiDownload size={16} /> Export
-            </button>
+            <div className="export-btn-container">
+              <button
+                className="export-btn"
+                onClick={() => setShowDropdown(!showDropdown)}
+              >
+                <FiDownload size={16} /> Export
+              </button>
+              {showDropdown && (
+                <div className="export-dropdown">
+                  <button
+                    className="export-option"
+                    onClick={() => handleExport("PDF")}
+                  >
+                    Export PDF
+                  </button>
+                  <button
+                    className="export-option"
+                    onClick={() => handleExport("Excel")}
+                  >
+                    Export Excel
+                  </button>
+                  <button
+                    className="export-option"
+                    onClick={() => handleExport("Doc")}
+                  >
+                    Export Doc
+                  </button>
+                </div>
+              )}
+            </div>
             <button
               className="add-company-btn"
               onClick={() => props.setAddCustomer(true)}
@@ -75,7 +139,7 @@ const CompanyList = (props) => {
                 {companies.map((c, index) => {
                   return (
                     <tr key={index}>
-                      <td data-label="Company Name">
+                      <td className="email-cell" data-label="Name">
                         <img
                           src={c.image}
                           alt={c.cname}
@@ -83,8 +147,8 @@ const CompanyList = (props) => {
                         />
                         {c.cname}
                       </td>
-                      <td data-label="Email">{c.cemail}</td>
-                      <td data-label="Company Number">{c.cnumber}</td>
+                      <td className="email-cell" data-label="Email">{c.cemail}</td>
+                      <td data-label="Phone Number">{c.cnumber}</td>
                       <td
                         data-label="Status"
                         className={`status ${
@@ -94,7 +158,7 @@ const CompanyList = (props) => {
                         <span className="status-dot"></span>
                         {c.status}
                       </td>
-                      <td className="details-cell">
+                      <td className="details-cell" data-label="Actions">
                         <button className="details-button">Details</button>
                       </td>
                     </tr>

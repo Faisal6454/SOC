@@ -1,38 +1,164 @@
 import React, { useState } from "react";
 import "./Tools.css";
-import { useNavigate } from 'react-router-dom';
-import ToolsList from "./toolslist/ToolsList";
-import AddTools from "./addtools/AddTools";
+import { FiAlignCenter, FiRefreshCw, FiDownload, FiHash } from "react-icons/fi"; // Importing icons
+import  logo  from "../../assets/icons/ToolsIcon.png";
 
-const Tools = () => {
-    const [addCustomer,setAddCustomer] = useState(false)
-    const [customer,setCustomer] = useState([])
-    console.log("comapney customer",customer)
-    const navigate = useNavigate();
+const Tools = (props) => {
 
-    return (
-    <div className="company">
+  const [activeFilter, setActiveFilter] = useState("All");
+  const [isSpinning, setIsSpinning] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
-{
+  const handleRefreshClick = () => {
+    setIsSpinning(true);
+    setTimeout(() => {
+      setIsSpinning(false);
+      // Add your refresh logic here
+    }, 1000); // Adjust timeout duration as needed
+  };
 
-    addCustomer ? 
-    <AddTools  setCustomer={setCustomer} customer={customer} setAddCustomer={setAddCustomer}/>
-    :
-    customer.length > 0 ?   <ToolsList company={customer} setAddCustomer={setAddCustomer} />
-    :
-    <div className="company-content">
-    <div className="main-content">
-    <div className="add-company">
-    <button className="btn" onClick={() => setAddCustomer(true) }>Add Data</button>
-    </div>
-    </div>
-    </div>  
-}
+  const handleExport = (format) => {
+    console.log(`Exporting as ${format}`);
+    // Add your export logic here
+  };
 
+  const defaultTools = [
+    {
+      image:
+        "https://pics.craiyon.com/2023-07-15/dc2ec5a571974417a5551420a4fb0587.webp", // Placeholder image URL
+      tname: "Tools 1",
+      version: "1.0",
+      status: "Completed",
+    },
+    {
+      image: "https://pics.craiyon.com/2023-11-13/I-4oH4PwSp6sFlfKujkp8w.webp", // Placeholder image URL
+      tname: "Tools 2",
+      version: "2.0",
+      status: "Pending",
+    },
+    {
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUqVK-GFAbd6Nwqn3dnA2lH4JAEJ4-RQaq7Q&s", // Placeholder image URL
+      tname: "Tools 3",
+      version: "3.0",
+      status: "In Route",
+    },
+    // Add more default tools as needed
+  ];
 
-</div>
+  // Using tools prop if passed, otherwise defaultTools
+  const tools = [...defaultTools, ...(props.tools || [])];
 
-    );
+  return (
+    <>
+      <div className="main-content">
+        <div className="c-btn">
+          <div className="filter-btns">
+            <button
+              className={`filter-btn ${activeFilter === "All" ? "active" : ""}`}
+              onClick={() => setActiveFilter("All")}
+            >
+              All
+            </button>
+            <button
+              className={`filter-btn ${activeFilter === "Completed" ? "active" : ""}`}
+              onClick={() => setActiveFilter("Completed")}
+            >
+              Active
+            </button>
+            <button
+              className={`filter-btn ${activeFilter === "Pending" ? "active" : ""}`}
+              onClick={() => setActiveFilter("Pending")}
+            >
+              Inactive
+            </button>
+          </div>
+          <div className="ref-sec">
+            <button
+              className={`refresh-btn ${isSpinning ? "spinning" : ""}`}
+              onClick={handleRefreshClick}
+            >
+              <FiRefreshCw size={16} />
+            </button>
+            <div className="export-btn-container">
+              <button
+                className="export-btn"
+                onClick={() => setShowDropdown(!showDropdown)}
+              >
+                <FiDownload size={16} /> Export
+              </button>
+              {showDropdown && (
+                <div className="export-dropdown">
+                  <button
+                    className="export-option"
+                    onClick={() => handleExport("PDF")}
+                  >
+                    Export PDF
+                  </button>
+                  <button
+                    className="export-option"
+                    onClick={() => handleExport("Excel")}
+                  >
+                    Export Excel
+                  </button>
+                  <button
+                    className="export-option"
+                    onClick={() => handleExport("Doc")}
+                  >
+                    Export Doc
+                  </button>
+                </div>
+              )}
+            </div>
+            <button
+              className="add-tools-btn"
+              onClick={() => props.setAddTools(true)}
+            >
+              + Add Tools
+            </button>
+          </div>
+        </div>
+        <div className="tools-list-container">
+          <div className="table-container">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Tools Icon</th> {/* Icon for "No." */}
+                  <th>Tools Name</th>
+                  <th>Tools Version</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tools.map((t, index) => (
+                  <tr key={index}>
+                    <td data-label="Icon"><img src={logo} alt="icon" /></td> {/* Icon for "No." */}
+                    <td data-label="Tools Name">
+                      {t.tname}
+                    </td>
+                    <td data-label="Tools Version">{t.version}</td>
+                    <td
+                      data-label="Status"
+                      className={`status ${
+                        t.status ? t.status.toLowerCase() : ""
+                      }`}
+                    >
+                      <span className="status-dot"></span>
+                      {t.status}
+                    </td>
+                    <td className="details-cell" data-label="Actions">
+                      <button className="details-button">Details</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Tools;

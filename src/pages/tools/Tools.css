@@ -1,1 +1,23 @@
-/* Tools.css */
+.t-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  
+  .add-tools-btn {
+  background-color: #006AFF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+  
+  .add-tools-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .tools-list-container {
+    margin-top: 20px;
+  }

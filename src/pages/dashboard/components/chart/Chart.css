@@ -1,32 +1,67 @@
 .chart {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
-  }
-  
-  .chart-container {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.chart-container {
   border-radius: 10px;
   margin: auto;
   font-family: 'Arial', sans-serif;
+  padding: 0 20px;
+  max-width: 1200px; /* Ensure it doesn't get too wide on large screens */
 }
 
 .chart-header {
   display: flex;
+  flex-direction: column; /* Stack items on top of each other on small screens */
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* Align items to start on small screens */
   margin-bottom: 20px;
 }
 
 .chart-header h3 {
   font-size: 18px;
+  margin-bottom: 10px; /* Add some space below the heading on small screens */
 }
 
 .chart-select {
-  width: 15%;
+  width: 100%;
   padding: 5px 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
+  max-width: 300px; /* Ensure it doesn't get too wide */
+}
+
+@media (min-width: 600px) {
+  .chart-header {
+    flex-direction: row; /* Side by side on larger screens */
+    align-items: center;
+  }
+  .chart-select {
+    width: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .chart-header h3 {
+    font-size: 20px;
+  }
+  .chart-select {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chart-header h3 {
+    font-size: 22px;
+  }
+  .chart-select {
+    font-size: 18px;
+  }
 }
