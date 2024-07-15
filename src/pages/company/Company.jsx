@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./Company.css";
 import { FiAlignCenter, FiRefreshCw, FiDownload } from "react-icons/fi"; // Importing icons
+import CompanyForm from "./companyform/CompanyForm";
 
 const CompanyList = (props) => {
 
   const [activeFilter, setActiveFilter] = useState("All");
   const [isSpinning, setIsSpinning] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-
+  const [addCustomer,setAddCustomer] = useState(false)
+  const [customer,setCustomer] = useState([])
+  console.log("comapney customer",customer)
 
   const handleRefreshClick = () => {
     setIsSpinning(true);
@@ -56,6 +59,13 @@ const CompanyList = (props) => {
 
   return (
     <>
+    {
+
+addCustomer ? 
+<CompanyForm  setCustomer={setCustomer} customer={customer} setAddCustomer={setAddCustomer}/>
+:
+customer.length > 0 ?   <CompanyList company={customer} setAddCustomer={setAddCustomer} />
+:
       <div className="main-content">
         <div className="c-btn">
           <div className="filter-btns">
@@ -169,6 +179,7 @@ const CompanyList = (props) => {
           </div>
         </div>
       </div>
+}
     </>
   );
 };

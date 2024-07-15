@@ -27,20 +27,20 @@ const Tools = (props) => {
       image:
         "https://pics.craiyon.com/2023-07-15/dc2ec5a571974417a5551420a4fb0587.webp", // Placeholder image URL
       tname: "Tools 1",
-      version: "1.0",
+      tidnumber: "#SOC11",
       status: "Completed",
     },
     {
       image: "https://pics.craiyon.com/2023-11-13/I-4oH4PwSp6sFlfKujkp8w.webp", // Placeholder image URL
       tname: "Tools 2",
-      version: "2.0",
+      tidnumber: "#SOC12",
       status: "Pending",
     },
     {
       image:
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUqVK-GFAbd6Nwqn3dnA2lH4JAEJ4-RQaq7Q&s", // Placeholder image URL
       tname: "Tools 3",
-      version: "3.0",
+      tidnumber: "#SOC13",
       status: "In Route",
     },
     // Add more default tools as needed
@@ -125,7 +125,7 @@ const Tools = (props) => {
                 <tr>
                   <th>Tools Icon</th> {/* Icon for "No." */}
                   <th>Tools Name</th>
-                  <th>Tools Version</th>
+                  <th>Tools ID Number</th>
                   <th>Status</th>
                   <th>Actions</th>
                 </tr>
@@ -137,7 +137,7 @@ const Tools = (props) => {
                     <td data-label="Tools Name">
                       {t.tname}
                     </td>
-                    <td data-label="Tools Version">{t.version}</td>
+                    <td data-label="Tools ID">{t.tidnumber}</td>
                     <td
                       data-label="Status"
                       className={`status ${
