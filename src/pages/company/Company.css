@@ -32,12 +32,31 @@
 }
 
 .details-button {
-  background-color: #006AFF;
-  color: white;
   border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
+  background-color: transparent;
   cursor: pointer;
+  position: relative;
+  font-size: larger;
+}
+
+.action-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+}
+
+.action-option {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  text-align: left;
+  background-color: white;
+}
+
+.action-option:hover {
+  background-color: #f0f0f0;
 }
 
 /* Align the Details button to the right */
@@ -45,10 +64,6 @@
   text-align: right;
   padding-right: 16px;
   /* Adjust as necessary for spacing */
-}
-
-.details-button:hover {
-  background-color: #0056b3;
 }
 
 .add-company-btn {
@@ -76,13 +91,13 @@
   /* Default transparent border */
 }
 
-.status.completed .status-dot {
+.status.active .status-dot {
   background-color: green;
   border-color: green;
   /* Border color same as background */
 }
 
-.status.route .status-dot {
+.status.inactive .status-dot {
   background-color: red;
   border-color: red;
   /* Border color same as background */
@@ -239,6 +254,39 @@ body {
   background-color: #0056b3;
   color: white;
 }
+
+/* new css  */
+
+/* new css */
+
+/* Pagination css */
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 20px 40px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+}
+
 
 /* Responsive styles */
 

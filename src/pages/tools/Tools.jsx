@@ -24,25 +24,21 @@ const Tools = (props) => {
 
   const defaultTools = [
     {
-      image:
-        "https://pics.craiyon.com/2023-07-15/dc2ec5a571974417a5551420a4fb0587.webp", // Placeholder image URL
       tname: "Tools 1",
       tidnumber: "#SOC11",
-      status: "Completed",
+      status: "Active",
     },
     {
-      image: "https://pics.craiyon.com/2023-11-13/I-4oH4PwSp6sFlfKujkp8w.webp", // Placeholder image URL
       tname: "Tools 2",
       tidnumber: "#SOC12",
-      status: "Pending",
+      status: "Inactive",
     },
     {
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUqVK-GFAbd6Nwqn3dnA2lH4JAEJ4-RQaq7Q&s", // Placeholder image URL
       tname: "Tools 3",
       tidnumber: "#SOC13",
-      status: "In Route",
+      status: "Active",
     },
+    
     // Add more default tools as needed
   ];
 
