@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./Tools.css";
-import { FiAlignCenter, FiRefreshCw, FiDownload, FiHash } from "react-icons/fi"; // Importing icons
-import  logo  from "../../assets/icons/ToolsIcon.png";
+import { FiRefreshCw, FiDownload } from "react-icons/fi"; // Importing icons
+import logo from "../../assets/icons/ToolsIcon.png";
+import { PiPencilSimpleLineFill } from "react-icons/pi";
+import { RiDeleteBin4Fill } from "react-icons/ri";
+import AddTools from "./addtools/AddTools"; // Import your AddTools component
 
 const Tools = (props) => {
-
   const [activeFilter, setActiveFilter] = useState("All");
   const [isSpinning, setIsSpinning] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showAddToolsForm, setShowAddToolsForm] = useState(false); // State to control form visibility
 
   const handleRefreshClick = () => {
     setIsSpinning(true);
@@ -20,6 +23,16 @@ const Tools = (props) => {
   const handleExport = (format) => {
     console.log(`Exporting as ${format}`);
     // Add your export logic here
+  };
+
+  const handleAddTool = () => {
+    console.log("Add tool logic here");
+    // Add your add tool logic here
+  };
+
+  const handleDeleteTool = (index) => {
+    console.log(`Deleting tool at index ${index}`);
+    // Add your delete tool logic here
   };
 
   const defaultTools = [
@@ -38,12 +51,27 @@ const Tools = (props) => {
       tidnumber: "#SOC13",
       status: "Active",
     },
-    
     // Add more default tools as needed
   ];
 
   // Using tools prop if passed, otherwise defaultTools
   const tools = [...defaultTools, ...(props.tools || [])];
+
+  const filteredTools = tools.filter((tool) => {
+    if (activeFilter === "All") return true;
+    return tool.status === activeFilter;
+  });
+
+  // Conditionally render AddTools component if showAddToolsForm is true
+  if (showAddToolsForm) {
+    return (
+      <AddTools
+        setCustomer={props.setCustomer}
+        customer={props.customer}
+        setAddCustomer={setShowAddToolsForm} // pass state setter to AddTools component
+      />
+    );
+  }
 
   return (
     <>
@@ -57,14 +85,18 @@ const Tools = (props) => {
               All
             </button>
             <button
-              className={`filter-btn ${activeFilter === "Completed" ? "active" : ""}`}
-              onClick={() => setActiveFilter("Completed")}
+              className={`filter-btn ${
+                activeFilter === "Active" ? "active" : ""
+              }`}
+              onClick={() => setActiveFilter("Active")}
             >
               Active
             </button>
             <button
-              className={`filter-btn ${activeFilter === "Pending" ? "active" : ""}`}
-              onClick={() => setActiveFilter("Pending")}
+              className={`filter-btn ${
+                activeFilter === "Inactive" ? "active" : ""
+              }`}
+              onClick={() => setActiveFilter("Inactive")}
             >
               Inactive
             </button>
@@ -107,8 +139,8 @@ const Tools = (props) => {
               )}
             </div>
             <button
-              className="add-tools-btn"
-              onClick={() => props.setAddTools(true)}
+              className="add-tools-btn add-company-btn"
+              onClick={() => setShowAddToolsForm(true)} // Show form when clicked
             >
               + Add Tools
             </button>
@@ -127,12 +159,12 @@ const Tools = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {tools.map((t, index) => (
+                {filteredTools.map((t, index) => (
                   <tr key={index}>
-                    <td data-label="Icon"><img src={logo} alt="icon" /></td> {/* Icon for "No." */}
-                    <td data-label="Tools Name">
-                      {t.tname}
+                    <td data-label="Icon">
+                      <img src={logo} alt="icon" />
                     </td>
+                    <td data-label="Tools Name">{t.tname}</td>
                     <td data-label="Tools ID">{t.tidnumber}</td>
                     <td
                       data-label="Status"
@@ -144,7 +176,18 @@ const Tools = (props) => {
                       {t.status}
                     </td>
                     <td className="details-cell" data-label="Actions">
-                      <button className="details-button">Details</button>
+                      <button
+                        className="details-button"
+                        onClick={handleAddTool}
+                      >
+                        <PiPencilSimpleLineFill />
+                      </button>
+                      <button
+                        className="details-button delete"
+                        onClick={() => handleDeleteTool(index)}
+                      >
+                        <RiDeleteBin4Fill />
+                      </button>
                     </td>
                   </tr>
                 ))}

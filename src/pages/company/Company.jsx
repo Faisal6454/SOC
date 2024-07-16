@@ -5,6 +5,10 @@ import CompanyForm from "./companyform/CompanyForm";
 
 // icon
 import { BsFillHddStackFill } from "react-icons/bs";
+import { FaUser } from "react-icons/fa";
+import { RiEdit2Fill } from "react-icons/ri";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+
 
 const CompanyList = (props) => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -265,10 +269,17 @@ const CompanyList = (props) => {
                                 Manage Tool
                               </button>
                               <button className="action-option">
+                                <FaUser />
                                 Manage User
                               </button>
-                              <button className="action-option">Edit</button>
-                              <button className="action-option">Delete</button>
+                              <button className="action-option">
+                                <RiEdit2Fill />
+                                Edit
+                              </button>
+                              <button className="action-option">
+                                <RiDeleteBin5Fill />
+                                 Delete
+                              </button>
                             </div>
                           )}
                         </td>

@@ -43,10 +43,14 @@
   position: absolute;
   background-color: white;
   border: 1px solid #ccc;
+  border-radius: 8px;
   z-index: 1000;
 }
 
 .action-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 10px 20px;
   cursor: pointer;
   border: none;
@@ -291,7 +295,8 @@ body {
 /* Responsive styles */
 
 @media (max-width: 768px) {
-  .c-btn {
+  .c-btn,
+  .t-btn {
     flex-direction: row;
     align-items: flex-start;
   }

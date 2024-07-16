@@ -1,8 +1,8 @@
-.t-btn {
+/* .t-btn {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 20px;
-  }
+  } */
   
   .add-tools-btn {
   background-color: #006AFF;
@@ -21,3 +21,17 @@
   .tools-list-container {
     margin-top: 20px;
   }
+
+  .details-button {
+  padding: 5px 10px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.details-button:hover {
+  color: #0056b3;
+}
+
+.delete:hover {
+  color: rgb(219, 43, 43);
+}
