@@ -5,9 +5,11 @@ import { DataProvider } from "./context/Context";
 import Layout from "./components/shared/Layout";
 import LoginForm from "./pages/login/LoginForm";
 import Otp from "./pages/Otp/OTP";
+import ForgotPassword from "./pages/password/ForgotPassword";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Company from "./pages/company/Company";
 import Tools from "./pages/tools/Tools";
+
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<LoginForm />} />
                 <Route path="/otp" element={<Otp />} />
+                <Route path="/forgotpassword" element={<ForgotPassword />} />
                 <Route path="/layout" element={<Layout />}>
                   <Route index element={<Dashboard />} />
                   <Route path="company" element={<Company />} />

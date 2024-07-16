@@ -3,40 +3,56 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  overflow-y: hidden;
-  background: #fff;
-  padding: 1rem;
+}
+
+.box-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  height: 100vh;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.left-box {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-box img {  
+  width: 660px;
+  height: 824px;
+  object-fit: cover;
+  border-radius: 40px;
 }
 
 .otp-form {
-  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50%;
+  /* padding: 40px; */
 }
 
 .otp-form .logo {
-  position: absolute;
-  top: 30px;
-  left: 30px;
   width: 100px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .otp-form h2 {
   margin: 0;
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1.5rem;
-  margin-left: 2rem;
+  font-size: 3rem;
 }
 
 .otp-inputs {
   display: flex;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 .otp-inputs input {
@@ -70,6 +86,17 @@
   background-color: #0056b3;
 }
 
+.back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 .resend-code {
   text-align: center;
   cursor: pointer;
@@ -80,39 +107,25 @@
   color: #0056b3;
 }
 
-.otp-image {
-  display: none; /* Hide the image by default */
-  justify-content: center;
-  align-items: center;
-  margin: 40px;
-  background: rgba(210, 224, 243, 1);
-  width: 668px;
-  height: 646px;
-  padding: 0px 16px 31px 16px;
-  border-radius: 40px;
-  opacity: 0px;
-}
 
-@media (min-width: 768px) {
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .box-area {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .left-box {
+    display: none;
+  }
+
   .otp-form {
-    max-width: 50%;
-    padding-right: 3rem; /* Add some padding to the right for better alignment */
+    width: 100%;
+    padding: 20px;
   }
-
-  .otp-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(210, 224, 243, 1);
-    width: 668px;
-    height: 646px;
-    padding: 0px 16px 31px 16px;
-    border-radius: 40px;
-  }
-
-  .otp-image img {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-  }
+  .otp-form h2 {
+  margin: 0;
+  font-size: 2rem;
+}
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import "./LoginForm.css";
-import LoginImg from "../../assets/images/LoginForm.png"; // Ensure the image path is correct
+import LoginImg from "../../assets/images/Login.png"; // Ensure the image path is correct
 import Logo from "../../assets/images/Logo.png";
 import { useNavigate } from "react-router-dom";
 
@@ -118,7 +118,7 @@ const LoginForm = () => {
                   </div>
                   <div className="forgot">
                     <small>
-                      <a href="/forgot-password">Forgot password?</a>
+                      <a href="/forgotpassword">Forgot password?</a>
                     </small>
                   </div>
                 </div>
