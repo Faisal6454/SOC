@@ -46,9 +46,9 @@
   margin-bottom: 20px;
 }
 
-.header-text h2 {
+.header-text h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 32px;
 }
 
 .header-text p {
@@ -58,7 +58,6 @@
 }
 
 .input-group {
-  margin-bottom: 20px;
   position: relative;
 }
 
@@ -115,10 +114,10 @@
 
 .btn {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
+  border-radius: 200px;
   cursor: pointer;
   margin-top: 40px;
 }
