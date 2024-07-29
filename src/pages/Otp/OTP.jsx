@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './OTP.css';
 
 import Logo from "../../assets/images/Logo.png";
@@ -56,10 +56,10 @@ const Otp = () => {
             <button type="submit" className="submit-btn">
               Verified
             </button>
-            <button type="submit" className="back-btn">
+            <Link to="/" type="submit" className="back-btn">
               <IoArrowBack size={25} />
               Back
-            </button>
+            </Link>
           </form>
         </div>
       </div>

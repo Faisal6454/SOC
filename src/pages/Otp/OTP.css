@@ -77,7 +77,7 @@
   color: white;
   background-color: #007bff;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -87,13 +87,17 @@
 }
 
 .back-btn {
+  text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  padding: 0.8rem;
   font-size: 1rem;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
+  color: #000;
+  background: #2222220D;
   transition: background-color 0.3s;
 }
 

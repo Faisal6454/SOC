@@ -1,65 +1,134 @@
-/* ToolsForm.css */
-.tools-container {
-  /* padding: 16px; */
-  max-width: 100%;
-  margin: 10px;
-  border-radius: 8px;
-  /* background-color: #ffffff; */
-  /* border: 1px solid #e0e0e0; */
-  margin-top: 25px;
+/* src/AddToolForm.css */
+
+
+.add-tool-form {
+  /* width: 80%; */
+  margin: auto;
+  padding: 40px;
+  border-radius: 10px;
 }
 
-form {
+h3 {
+  text-align: left;
+  margin-bottom: 20px;
+  border-bottom:1px solid #000;
+}
+
+.tools-form-container {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 20px;
+}
+
+.tool-info {
   padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* border: 1px solid #e5e5e5; */
+  border-radius: 10px;
 }
 
-h2 {
-  font-size: 1.25rem;
-  font-weight: bold;
-  margin-bottom: 16px;
+.tool-info h3 {
+  margin-bottom: 20px;
 }
 
-.tools-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+.upload-section {
+  display: flex;
+  /* justify-content: center; */
+  margin-bottom: 20px;
 }
 
-.form-group {
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 2px dashed #e5e5e5;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.upload-box:hover {
+  border-color: #ccc;
+}
+
+.upload-icon {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.upload-input {
+  display: none;
+}
+
+.status-section {
+  margin-bottom: 20px;
+}
+
+.status-options {
+  display: flex;
+  gap: 20px;
+}
+
+.status-options label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.input-section {
+  display: flex;
+  gap: 20px;
+}
+
+.input-group {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-label {
-  font-weight: medium;
-  margin-bottom: 8px;
+.input-group label {
+  margin-bottom: 5px;
 }
 
-.tools-input {
-  width: 100%;
-  max-width: 400px !important;
-  padding: 8px;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-sizing: border-box;
+.input-group input {
+  padding: 10px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.clear-button,
+.submit-button {
+  width: 90px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.clear-button {
+  background-color: #f0f0f0;
+}
+
+.clear-button:hover {
+  background-color: #e0e0e0;
 }
 
 .submit-button {
-  width: 100%;
-  max-width: 141px;
-  height: 48px;
-  border-radius: 8px;
-  padding: 12px 50px;
-  align-self: flex-start;
-  background-color: #1e88e5;
-  color: #ffffff;
+  background-color: #007bff;
+  color: #fff;
 }
 
-@media (min-width: 768px) {
-  .tools-input {
-    width: 100%;
-  }
+.submit-button:hover {
+  background-color: #0056b3;
 }

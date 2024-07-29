@@ -5,7 +5,7 @@ import logo from "../../assets/images/Logo.png";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { IoArrowBack } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
 
@@ -71,10 +71,10 @@ const ForgotPassword = () => {
                 </div>
                 <div className="btn-group">
                   <button className="btn">Send OTP</button>
-                  <button type="submit" className="btn back-btn">
-                    <IoArrowBack size={25} />
-                    Back
-                  </button>
+                  <Link to="/" type="submit" className="back-btn">
+              <IoArrowBack size={25} />
+              Back
+            </Link>
                 </div>
               </Form>
             )}
