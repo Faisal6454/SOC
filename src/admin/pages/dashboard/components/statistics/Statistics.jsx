@@ -1,6 +1,6 @@
 import React from 'react';
 import './Statistics.css';
-import icon from "../../../../assets/Dashboard/todayt.png";
+import icon from "../../../../../assets/Dashboard/todayt.png";
 
 
 const Statistics = () => {

@@ -4,12 +4,12 @@ import Card from "./Cards";
 import "./SummaryCards.css";
 
 // Importing images from local assets folder
-import company from "../../../../assets/Dashboard/building.png";
-import software from "../../../../assets/Dashboard/monitor-mobbile.png";
-import malware from "../../../../assets/Dashboard/cpu-setting.png";
-import driver from "../../../../assets/Dashboard/driver.png";
-import cube from "../../../../assets/Dashboard/3dcube.png";
-import judge from "../../../../assets/Dashboard/judge.png";
+import company from "../../../../../assets/Dashboard/building.png";
+import software from "../../../../../assets/Dashboard/monitor-mobbile.png";
+import malware from "../../../../../assets/Dashboard/cpu-setting.png";
+import driver from "../../../../../assets/Dashboard/driver.png";
+import cube from "../../../../../assets/Dashboard/3dcube.png";
+import judge from "../../../../../assets/Dashboard/judge.png";
 
 
 

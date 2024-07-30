@@ -3,12 +3,12 @@ import { NavLink, useLocation } from "react-router-dom";
 import "./SideBar.css";
 
 // icons
-import Logo from "../../../assets/images/Logo.png";
-import DashboardIcon from "../../../assets/icons/dashboard.svg";
-import CompanyIcon from "../../../assets/icons/company.svg";
-import ToolsIcon from "../../../assets/icons/tools.svg";
+import Logo from "../../../../assets/images/Logo.png";
+import DashboardIcon from "../../../../assets/icons/dashboard.svg";
+import CompanyIcon from "../../../../assets/icons/company.svg";
+import ToolsIcon from "../../../../assets/icons/tools.svg";
 import { RiUserFill } from "react-icons/ri";
-import LogoutIcon from "../../../assets/icons/Logout.png";
+import LogoutIcon from "../../../../assets/icons/Logout.png";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState("/");
@@ -35,25 +35,25 @@ const Sidebar = () => {
 
         <ul>
           <li
-            className={activeLink === "/layout" ? "active" : ""}
-            onClick={() => handleLinkClick("/layout")}
+            className={activeLink === "/admin" ? "active" : ""}
+            onClick={() => handleLinkClick("/admin")}
           >
             <img src={DashboardIcon} alt="Dashboard" />
-            <NavLink to="/layout">Dashboard</NavLink>
+            <NavLink to="/admin">Dashboard</NavLink>
           </li>
           <li
-            className={activeLink === "/layout/company" ? "active" : ""}
-            onClick={() => handleLinkClick("/layout/company")}
+            className={activeLink === "/admin/company" ? "active" : ""}
+            onClick={() => handleLinkClick("/admin/company")}
           >
             <img src={CompanyIcon} alt="Company" />
-            <NavLink to="/layout/company">Company</NavLink>
+            <NavLink to="/admin/company">Company</NavLink>
           </li>
           <li
-            className={activeLink === "/layout/tools" ? "active" : ""}
-            onClick={() => handleLinkClick("/layout/tools")}
+            className={activeLink === "/admin/tools" ? "active" : ""}
+            onClick={() => handleLinkClick("/admin/tools")}
           >
             <img src={ToolsIcon} alt="Tools" />
-            <NavLink to="/layout/tools">Tools</NavLink>
+            <NavLink to="/admin/tools">Tools</NavLink>
           </li>
         </ul>
       </div>

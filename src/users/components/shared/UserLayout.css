@@ -1,0 +1,8 @@
+.user-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .content {
+    padding: 20px;
+  }

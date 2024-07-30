@@ -24,7 +24,7 @@ const Otp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Assume OTP is verified successfully
-    navigate('/layout');
+    navigate('/user');
   };
 
   return (

@@ -1,4 +1,14 @@
-.Layout-Container {
+.admin-layout {
+  display: flex;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+
+.AdminLayout-Container {
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -25,7 +35,7 @@
   right: 0;
 }
 
-.Layout-Box {
+.AdminLayout-Box {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -34,7 +44,7 @@
   margin-left: 250px; /* Adjust to sidebar width */
 }
 
-.Layout-Outlet {
+.AdminLayout-Outlet {
   width: 100%;
   flex: 1;
   /* padding: 8px; */
@@ -46,7 +56,7 @@
 
 /* Small screens */
 @media screen and (max-width: 768px) {
-  .Layout-Container {
+  .AdminLayout-Container {
     flex-direction: column;
   }
 
@@ -67,13 +77,13 @@
     right: 0;
   }
 
-  .Layout-Box {
+  .AdminLayout-Box {
     flex: 1;
     margin-top: 40px; /* Adjust to navbar and sidebar height */
     margin-left: 0;
   }
 
-  .Layout-Outlet {
+  .AdminLayout-Outlet {
   padding: 0;
 }
 }

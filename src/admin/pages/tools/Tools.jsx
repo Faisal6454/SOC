@@ -4,7 +4,7 @@ import { PiPencilSimpleLineFill } from 'react-icons/pi';
 import { RiDeleteBin4Fill } from 'react-icons/ri';
 import AddTools from './addtools/AddTools';
 import './Tools.css';
-import defaultLogo from '../../assets/Dashboard/driver.png'; // Import the default icon
+import defaultLogo from '../../../assets/Dashboard/driver.png'; // Import the default icon
 
 const Tools = (props) => {
   const [tools, setTools] = useState([]);
@@ -12,6 +12,9 @@ const Tools = (props) => {
   const [isSpinning, setIsSpinning] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
   const [showAddToolsForm, setShowAddToolsForm] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
 
   const handleRefreshClick = () => {
     setIsSpinning(true);
@@ -39,6 +42,9 @@ const Tools = (props) => {
     { tname: 'Tools 1', tidnumber: '#SOC11', status: 'Active', icon: defaultLogo },
     { tname: 'Tools 2', tidnumber: '#SOC12', status: 'Inactive', icon: defaultLogo },
     { tname: 'Tools 3', tidnumber: '#SOC13', status: 'Active', icon: defaultLogo },
+    { tname: 'Tools 4', tidnumber: '#SOC14', status: 'Active', icon: defaultLogo },
+    { tname: 'Tools 5', tidnumber: '#SOC15', status: 'Inactive', icon: defaultLogo },
+    { tname: 'Tools 6', tidnumber: '#SOC16', status: 'Active', icon: defaultLogo },
   ];
 
   const allTools = [...defaultTools, ...tools];
@@ -47,6 +53,19 @@ const Tools = (props) => {
   if (showAddToolsForm) {
     return <AddTools onAddTool={handleAddTool} />;
   }
+
+
+  // Calculate the current companies to display
+  const indexOfLastTools = currentPage * itemsPerPage;
+  const indexOfFirstTools = indexOfLastTools - itemsPerPage;
+  const currentTools = filteredTools.slice(
+    indexOfFirstTools,
+    indexOfLastTools
+  );
+
+  // Calculate total pages
+  const totalPages = Math.ceil(filteredTools.length / itemsPerPage);
+
 
   return (
     <>
@@ -89,7 +108,7 @@ const Tools = (props) => {
                 </tr>
               </thead>
               <tbody>
-                {filteredTools.map((tool, index) => (
+                {currentTools.map((tool, index) => (
                   <tr key={index}>
                     <td data-label="Icon"><img src={tool.icon} alt="icon" className="tool-icon" /></td>
                     <td data-label="Tools Name">{tool.tname}</td>
@@ -108,6 +127,25 @@ const Tools = (props) => {
             </table>
           </div>
         </div>
+
+        <div className="pagination">
+            <button
+              onClick={() => setCurrentPage(currentPage - 1)}
+              disabled={currentPage === 1}
+            >
+              Previous
+            </button>
+            <span>
+              Page {currentPage} of {totalPages}
+            </span>
+            <button
+              onClick={() => setCurrentPage(currentPage + 1)}
+              disabled={currentPage === totalPages}
+            >
+              Next
+            </button>
+          </div>
+
       </div>
     </>
   );

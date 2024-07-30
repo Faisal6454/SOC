@@ -4,7 +4,7 @@ import '../navbar/NavBar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faCog, faDownload, faSignOutAlt, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 import { faStar, faPlusSquare } from '@fortawesome/free-regular-svg-icons';
-import pro from '../../../assets/images/pro.jpeg';
+import pro from '../../../../assets/images/pro.jpeg';
 
 const DropdownMenu = () => {
   const [isActive, setIsActive] = useState(false);

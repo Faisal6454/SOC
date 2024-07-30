@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import '../Company.css';
 import './CompanyForm.css';
-import Logo from "../../../assets/images/FoxHub.png"
+import Logo from "../../../../assets/images/FoxHub.png"
 
 const CompanyForm = (props) => {
 
