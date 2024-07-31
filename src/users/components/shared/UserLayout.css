@@ -1,4 +1,4 @@
-.user-layout {
+.User-layout {
     display: flex;
     flex-direction: column;
   }
@@ -6,3 +6,95 @@
   .content {
     padding: 20px;
   }
+
+
+  .User-layout {
+    display: flex;
+  }
+  
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  
+  .UserLayout-Container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .Sidebar {
+    width: 250px; /* Adjust as needed */
+    flex-basis: 250px;
+    background-color: #f8f9fa; /* Adjust as needed */
+    z-index: 1;
+  }
+  
+  .Navbar {
+    height: 60px; /* Adjust as needed */
+    flex-basis: 60px;
+    width: 100%;
+    background-color: #343a40; /* Adjust as needed */
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .UserLayout-Box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    margin-top: 60px; /* Adjust to navbar height */
+    margin-left: 250px; /* Adjust to sidebar width */
+  }
+  
+  .UserLayout-Outlet {
+    width: 100%;
+    flex: 1;
+    /* padding: 8px; */
+    min-height: 0;
+    overflow: auto;
+  }
+  
+  /* Media queries for responsive design */
+  
+  /* Small screens */
+  @media screen and (max-width: 768px) {
+    .UserLayout-Container {
+      flex-direction: column;
+    }
+  
+    .Sidebar {
+      width: 100%;
+      height: 60px; /* Adjust as needed */
+      flex-basis: 60px;
+      position: fixed;
+      top: 60px; /* Adjust as needed */
+      left: 0;
+      right: 0;
+    }
+  
+    .Navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+  
+    .UserLayout-Box {
+      flex: 1;
+      margin-top: 40px; /* Adjust to navbar and sidebar height */
+      margin-left: 0;
+    }
+  
+    .UserLayout-Outlet {
+    padding: 0;
+  }
+  }
+  
