@@ -11,6 +11,7 @@ import Dashboard from './admin/pages/dashboard/Dashboard';
 import Company from './admin/pages/company/Company';
 import Tools from './admin/pages/tools/Tools';
 import UserDashboard from './users/pages/dashboard/UserDashboard';
+import UserTools from './users/pages/tools/UserTools';
 
 function App() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -38,6 +39,7 @@ function App() {
             {/* User Routes */}
             <Route path="/user" element={<UserLayout toggleSidebar={toggleSidebar} />}>
               <Route index element={<UserDashboard />} />
+              <Route path="usertools" element={<UserTools/>} />
               {/* Add other user routes here */}
             </Route>
           </Routes>
