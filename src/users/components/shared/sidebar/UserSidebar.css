@@ -1,0 +1,137 @@
+/* user-sidebar.css */
+.user-sidebar {
+    background-color: #fffefe;
+    color: rgb(20, 20, 20);
+    height: 100vh;
+    padding-top: 20px;
+    padding: 1px;
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-sidebar-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 60px;
+  }
+  
+  .user-sidebar-head .logo {
+    width: 100px;
+  }
+  
+  .user-sidebar ul {
+    list-style-type: none;
+    padding: 0 14px;
+    flex-grow: 1;
+    font-size: larger;
+  }
+  
+  .user-sidebar ul li {
+    margin-bottom: 10px;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+    column-gap: 12px;
+    letter-spacing: 0.03em;
+    padding: 12px 16px;
+    border-radius: 8px;
+    opacity: 1;
+    cursor: pointer;
+    transition: var(--transition-default);
+  }
+  
+  .user-sidebar ul li.active {
+    color: #2743f7; /* Change text color to blue */
+  }
+  
+  .user-sidebar ul li.active img {
+    filter: invert(35%) sepia(100%) saturate(7492%) hue-rotate(212deg) brightness(99%) contrast(109%); /* Change icon color to blue */
+  }
+  
+  .user-sidebar ul li a {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+  }
+  
+  .user-sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: end;
+    padding: 0 14px 20px;
+    font-size: larger;
+  }
+  
+  .user-sidebar-footer.manage-profile {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: black; /* Make text color black */
+  }
+  
+  .user-sidebar-footer.manage-profile.active-manage-profile {
+    background-color: lightgray;
+    color: black; /* Ensure text color remains black when active */
+  }
+  
+  .user-sidebar-footer .logout {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    border-radius: 8px;
+    column-gap: 12px;
+    letter-spacing: 0.03em;
+    background: none;
+    color: #d32f2f; /* Set logout button text color to red */
+    cursor: pointer;
+    transition: var(--transition-default);
+  }
+  
+  .user-sidebar-footer .logout.active-logout {
+    color: #d32f2f;
+  }
+  
+  .user-sidebar-footer .logout.active-logout img {
+    filter: brightness(0) invert(1); /* Ensure the icon turns white when active */
+  }
+  
+  .user-sidebar-footer .logout a {
+    text-decoration: none;
+    color: inherit;
+    list-style: none;
+  }
+  
+  .user-sidebar-footer .logout img {
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 768px) {
+    .user-sidebar {
+      transform: translateX(-100%); /* Hide user-sidebar by default */
+    }
+  
+    .user-sidebar.open {
+      transform: translateX(0);
+    }
+  
+    .user-sidebar-head {
+      margin-top: 75px;
+      margin-bottom: 30px;
+    }
+  
+    .user-sidebar-head .logo {
+      width: 100px;
+    }
+  }
+  

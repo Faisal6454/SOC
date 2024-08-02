@@ -1,7 +1,6 @@
 import React from 'react';
 import "./UserDashboard.css";
-import { BsBellFill } from "react-icons/bs";
-import { HiMiniMagnifyingGlass } from "react-icons/hi2";
+
 import CombinedChart from './components/CombinedChart';
 
 const UserDashboard = () => {
@@ -60,27 +59,7 @@ const UserDashboard = () => {
     <>
       <div className="user-dashboard">
         <div className="dashboard">
-          <header className="dashboard-header">
-            <div className="dashboard-header-left">
-              <h2>Hello, Alec Austin</h2>
-              <h1>Welcome to SOC Dashboard</h1>
-            </div>
-            <div className="dashboard-header-right">
-              <div className="search-bar">
-                <div className="search-icon">
-                  <HiMiniMagnifyingGlass size={25} />    
-                </div>      
-                <input type="text" placeholder="Search here..." />
-              </div>
-              <div className="icons">
-                <div className="icon bell-icon">
-                  <BsBellFill size={25} />      
-                  <span className="notification-dot"></span>
-                </div>
-                <div className="icon profile-icon"></div>
-              </div>
-            </div>
-          </header>
+          
           <main className="dashboard-main">
             <div className="charts">
               <div className="chart">

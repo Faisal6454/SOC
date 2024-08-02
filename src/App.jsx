@@ -12,6 +12,7 @@ import Company from './admin/pages/company/Company';
 import Tools from './admin/pages/tools/Tools';
 import UserDashboard from './users/pages/dashboard/UserDashboard';
 import UserTools from './users/pages/tools/UserTools';
+import ManageProfile from './screens/profile/ManageProfile';
 
 function App() {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -28,6 +29,7 @@ function App() {
             <Route path="/" element={<LoginForm />} />
             <Route path="/otp" element={<Otp />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/manageprofile" element={<ManageProfile/>} />
             
             {/* Admin Routes */}
             <Route path="/admin" element={<AdminLayout toggleSidebar={toggleSidebar} />}>

@@ -8,7 +8,7 @@ const UserTools = () => {
   const [file, setFile] = useState(null);
   const [isSpinning, setIsSpinning] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const notify = () => toast("Upload Succecefull !");
+  const notify = () => toast.success(" 🦄 Upload Succecefull !");
     
   const handleFileChange = (event) => {
     const uploadedFile = event.target.files[0];

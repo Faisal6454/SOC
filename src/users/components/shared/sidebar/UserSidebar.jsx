@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import "./SideBar.css";
+import "./UserSidebar.css";
 
 // icons
 import Logo from "../../../../assets/images/Logo.png";
 import DashboardIcon from "../../../../assets/icons/dashboard.svg";
-import CompanyIcon from "../../../../assets/icons/company.svg";
 import ToolsIcon from "../../../../assets/icons/tools.svg";
 import { RiUserFill } from "react-icons/ri";
 import LogoutIcon from "../../../../assets/icons/Logout.png";
 
-const Sidebar = () => {
-  const [activeLink, setActiveLink] = useState("/");
+
+const UserSidebar = () => {
+    const [activeLink, setActiveLink] = useState("/");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const location = useLocation();
 
@@ -27,37 +27,30 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+    <div className={`user-sidebar ${isSidebarOpen ? "open" : ""}`}>
       <div>
-        <div className="sidebar-head">
+        <div className="user-sidebar-head">
           <img src={Logo} alt="Logo" className="logo" />
         </div>
 
         <ul>
           <li
-            className={activeLink === "/admin" ? "active" : ""}
-            onClick={() => handleLinkClick("/admin")}
+            className={activeLink === "/user" ? "active" : ""}
+            onClick={() => handleLinkClick("/user")}
           >
             <img src={DashboardIcon} alt="Dashboard" />
-            <NavLink to="/admin">Dashboard</NavLink>
+            <NavLink to="/user">Dashboard</NavLink>
           </li>
           <li
-            className={activeLink === "/admin/company" ? "active" : ""}
-            onClick={() => handleLinkClick("/admin/company")}
-          >
-            <img src={CompanyIcon} alt="Company" />
-            <NavLink to="/admin/company">Company</NavLink>
-          </li>
-          <li
-            className={activeLink === "/admin/tools" ? "active" : ""}
-            onClick={() => handleLinkClick("/admin/tools")}
+            className={activeLink === "/user/usertools" ? "active" : ""}
+            onClick={() => handleLinkClick("/user/usertools")}
           >
             <img src={ToolsIcon} alt="Tools" />
-            <NavLink to="/admin/tools">Tools</NavLink>
+            <NavLink to="/user/usertools">Tools</NavLink>
           </li>
         </ul>
       </div>
-      <ul className="sidebar-footer">
+      <ul className="user-sidebar-footer">
         <li
           className={`manage-profile ${activeLink === "/manageprofile" ? "active-manage-profile" : ""}`}
           onClick={() => handleLinkClick("/manageprofile")}
@@ -74,7 +67,7 @@ const Sidebar = () => {
         </li>
       </ul>
     </div>
-  );
+    );
 };
 
-export default Sidebar;
+export default UserSidebar;
