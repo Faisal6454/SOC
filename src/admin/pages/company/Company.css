@@ -57,6 +57,9 @@
   width: 100%;
   text-align: left;
   background-color: white;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
 }
 
 .action-option:hover {
@@ -259,9 +262,6 @@ body {
   color: white;
 }
 
-/* new css  */
-
-/* new css */
 
 /* Pagination css */
 

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./Company.css";
-import { FiRefreshCw, FiDownload } from "react-icons/fi"; // Importing icons
+import { Link } from "react-router-dom"; 
 import CompanyForm from "./companyform/CompanyForm";
-
-// icon
+// Importing icons
+import { FiRefreshCw, FiDownload } from "react-icons/fi"; 
 import { BsFillHddStackFill } from "react-icons/bs";
 import { FaUser } from "react-icons/fa";
 import { RiEdit2Fill } from "react-icons/ri";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+
 
 
 const CompanyList = (props) => {
@@ -264,22 +265,22 @@ const CompanyList = (props) => {
                           </button>
                           {showActionDropdown === index && (
                             <div className="action-dropdown">
-                              <button className="action-option">
+                              <Link to="managetools" className="action-option">
                                 <BsFillHddStackFill />
                                 Manage Tool
-                              </button>
-                              <button className="action-option">
+                              </Link>
+                              <Link className="action-option">
                                 <FaUser />
                                 Manage User
-                              </button>
-                              <button className="action-option">
+                              </Link>
+                              <Link className="action-option">
                                 <RiEdit2Fill />
                                 Edit
-                              </button>
-                              <button className="action-option">
+                              </Link>
+                              <Link className="action-option">
                                 <RiDeleteBin5Fill />
                                  Delete
-                              </button>
+                              </Link>
                             </div>
                           )}
                         </td>

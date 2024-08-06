@@ -63,6 +63,29 @@
     color: inherit;
     list-style: none;
   }
+
+  .tools-dropdown {
+    list-style: none;
+    padding-left: 20px;
+  }
+  
+  .tools-dropdown li {
+    padding: 5px 0;
+  }
+  
+  .tools-dropdown li.active {
+    background-color: #e0e0e0; /* Adjust this to your desired active background color */
+  }
+  
+  .tools-dropdown li a {
+    color: #333; /* Adjust this to your desired text color */
+    text-decoration: none;
+  }
+  
+  .tools-dropdown li a:hover {
+    color: #007bff; /* Adjust this to your desired hover color */
+  }
+  
   
   .user-sidebar-footer {
     display: flex;
