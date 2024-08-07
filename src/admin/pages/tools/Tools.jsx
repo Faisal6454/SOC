@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { FiRefreshCw, FiDownload, FiPlus, FiX } from 'react-icons/fi';
-import { PiPencilSimpleLineFill } from 'react-icons/pi';
-import { RiDeleteBin4Fill } from 'react-icons/ri';
 import AddTools from './addtools/AddTools';
 import './Tools.css';
 import defaultLogo from '../../../assets/Dashboard/driver.png'; // Import the default icon
@@ -116,7 +114,7 @@ const Tools = (props) => {
                       {tool.status}
                     </td>
                     <td className="details-cell" data-label="Actions">
-                      <button className="details-button" onClick={() => toggleDropdown(index)}>
+                      <button className="details-button plus-btn" onClick={() => toggleDropdown(index)}>
                         {openDropdown === index ? <FiX /> : <FiPlus />}
                       </button>
                       {openDropdown === index && (

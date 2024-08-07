@@ -33,7 +33,7 @@
 
 
 /* Style for the details button */
-.details-button {
+.plus-btn {
   background: #222222;
   border-radius: 50px;
   color: #fff;
@@ -49,7 +49,7 @@
   /* color: #333; */
 }
 
-.details-button:hover {
+.plus-btn:hover {
   background: #000;
 }
 
