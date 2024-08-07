@@ -14,9 +14,7 @@ const AdminLayout = () => {
   return (
     <div className="AdminLayout-Container admin-layout">
       <div
-        className={`sidebar ${isSidebarOpen ? "open" : ""}`}
-        toggleSidebar={toggleSidebar}
-      >
+        className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
         <Sidebar />
       </div>
       <div className="AdminLayout-Box content">

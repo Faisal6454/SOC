@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiRefreshCw, FiDownload } from 'react-icons/fi';
+import { FiRefreshCw, FiDownload, FiPlus, FiX } from 'react-icons/fi';
 import { PiPencilSimpleLineFill } from 'react-icons/pi';
 import { RiDeleteBin4Fill } from 'react-icons/ri';
 import AddTools from './addtools/AddTools';
@@ -10,11 +10,10 @@ const Tools = (props) => {
   const [tools, setTools] = useState([]);
   const [activeFilter, setActiveFilter] = useState('All');
   const [isSpinning, setIsSpinning] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown by index
   const [showAddToolsForm, setShowAddToolsForm] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-
 
   const handleRefreshClick = () => {
     setIsSpinning(true);
@@ -54,18 +53,17 @@ const Tools = (props) => {
     return <AddTools onAddTool={handleAddTool} />;
   }
 
-
   // Calculate the current companies to display
   const indexOfLastTools = currentPage * itemsPerPage;
   const indexOfFirstTools = indexOfLastTools - itemsPerPage;
-  const currentTools = filteredTools.slice(
-    indexOfFirstTools,
-    indexOfLastTools
-  );
+  const currentTools = filteredTools.slice(indexOfFirstTools, indexOfLastTools);
 
   // Calculate total pages
   const totalPages = Math.ceil(filteredTools.length / itemsPerPage);
 
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
 
   return (
     <>
@@ -81,10 +79,10 @@ const Tools = (props) => {
               <FiRefreshCw size={16} />
             </button>
             <div className="export-btn-container">
-              <button className="export-btn" onClick={() => setShowDropdown(!showDropdown)}>
+              <button className="export-btn" onClick={() => setOpenDropdown('export')}>
                 <FiDownload size={16} /> Export
               </button>
-              {showDropdown && (
+              {openDropdown === 'export' && (
                 <div className="export-dropdown">
                   <button className="export-option" onClick={() => handleExport('PDF')}>Export PDF</button>
                   <button className="export-option" onClick={() => handleExport('Excel')}>Export Excel</button>
@@ -118,8 +116,38 @@ const Tools = (props) => {
                       {tool.status}
                     </td>
                     <td className="details-cell" data-label="Actions">
-                      <button className="details-button" onClick={() => { /* edit tool logic */ }}><PiPencilSimpleLineFill /></button>
-                      <button className="details-button delete" onClick={() => handleDeleteTool(index)}><RiDeleteBin4Fill /></button>
+                      <button className="details-button" onClick={() => toggleDropdown(index)}>
+                        {openDropdown === index ? <FiX /> : <FiPlus />}
+                      </button>
+                      {openDropdown === index && (
+                        <div className="action-dropdown">
+                          <h5>Select Actions:</h5>
+                          <div className="dropdown-option">
+                            <input type="checkbox" id={`checkbox1-${index}`} />
+                            <label htmlFor={`checkbox1-${index}`}>Start1</label>
+                          </div>
+                          <div className="dropdown-option">
+                            <input type="checkbox" id={`checkbox2-${index}`} />
+                            <label htmlFor={`checkbox2-${index}`}>Start2</label>
+                          </div>
+                          <div className="dropdown-option">
+                            <input type="checkbox" id={`checkbox3-${index}`} />
+                            <label htmlFor={`checkbox3-${index}`}>Start3</label>
+                          </div>
+                          <div className="dropdown-option">
+                            <input type="checkbox" id={`checkbox4-${index}`} />
+                            <label htmlFor={`checkbox4-${index}`}>Start4</label>
+                          </div>
+                          <div className="dropdown-option">
+                            <input type="checkbox" id={`checkbox5-${index}`} />
+                            <label htmlFor={`checkbox5-${index}`}>Start5</label>
+                          </div>
+                          <div className="dropdown-option">
+                            <input type="checkbox" id={`checkbox6-${index}`} />
+                            <label htmlFor={`checkbox6-${index}`}>Start6</label>
+                          </div>
+                        </div>
+                      )}
                     </td>
                   </tr>
                 ))}
@@ -127,25 +155,23 @@ const Tools = (props) => {
             </table>
           </div>
         </div>
-
         <div className="pagination">
-            <button
-              onClick={() => setCurrentPage(currentPage - 1)}
-              disabled={currentPage === 1}
-            >
-              Previous
-            </button>
-            <span>
-              Page {currentPage} of {totalPages}
-            </span>
-            <button
-              onClick={() => setCurrentPage(currentPage + 1)}
-              disabled={currentPage === totalPages}
-            >
-              Next
-            </button>
-          </div>
-
+          <button
+            onClick={() => setCurrentPage(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            Previous
+          </button>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <button
+            onClick={() => setCurrentPage(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            Next
+          </button>
+        </div>
       </div>
     </>
   );
