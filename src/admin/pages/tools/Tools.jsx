@@ -11,7 +11,7 @@ const Tools = (props) => {
   const [openDropdown, setOpenDropdown] = useState(null); // Track open dropdown by index
   const [showAddToolsForm, setShowAddToolsForm] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const itemsPerPage = 7;
 
   const handleRefreshClick = () => {
     setIsSpinning(true);
@@ -42,6 +42,8 @@ const Tools = (props) => {
     { tname: 'Tools 4', tidnumber: '#SOC14', status: 'Active', icon: defaultLogo },
     { tname: 'Tools 5', tidnumber: '#SOC15', status: 'Inactive', icon: defaultLogo },
     { tname: 'Tools 6', tidnumber: '#SOC16', status: 'Active', icon: defaultLogo },
+    { tname: 'Tools 7', tidnumber: '#SOC17', status: 'Inactive', icon: defaultLogo },
+    { tname: 'Tools 8', tidnumber: '#SOC18', status: 'Active', icon: defaultLogo },
   ];
 
   const allTools = [...defaultTools, ...tools];

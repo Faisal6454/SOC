@@ -71,6 +71,7 @@
   
   .tools-dropdown li {
     padding: 5px 0;
+    font-size: large;
   }
   
   .tools-dropdown li.active {

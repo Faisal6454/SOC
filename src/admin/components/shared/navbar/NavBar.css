@@ -19,7 +19,18 @@
 .navbar-left {
   display: flex;
   align-items: center;
-  margin-top: 0.5rem;
+  justify-content: center;
+  /* margin-top: 0.5rem; */
+}
+
+.navbar-left .back-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #006AFF;
+  border-radius: 8px;
+  padding: 2px;
+  margin-right: 1rem;
 }
 
 .navbar-right {

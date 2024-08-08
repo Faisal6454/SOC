@@ -7,6 +7,7 @@ import { DataProvider } from './context/Context';
 import LoginForm from './screens/login/LoginForm';
 import Otp from './screens/otp/OTP';
 import ForgotPassword from './screens/password/ForgotPassword';
+import NewPassword from './screens/password/NewPassword';
 import ManageProfile from './screens/profile/ManageProfile';
 
 // admin
@@ -20,6 +21,7 @@ import ManageTools from './admin/pages/company/managetools/ManageTools';
 import UserLayout from './users/components/shared/UserLayout';
 import UserDashboard from './users/pages/dashboard/UserDashboard';
 import UserTools from './users/pages/tools/UserTools';
+
 
 
 
@@ -38,6 +40,7 @@ function App() {
             <Route path="/" element={<LoginForm />} />
             <Route path="/otp" element={<Otp />} />
             <Route path="/forgotpassword" element={<ForgotPassword />} />
+            <Route path="/newpassword" element={<NewPassword />} />
             <Route path="/manageprofile" element={<ManageProfile/>} />
             
             {/* Admin Routes */}

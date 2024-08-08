@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     /* height: 100vh; */
-    background-color: #f5f7fb;
+    /* background-color: #f5f7fb; */
   }
   
   .top-bar {
@@ -28,7 +28,7 @@
     margin-right: 10px;
   }
   
-  .refresh-btn.spinning {
+  .refresh-btn.spinning svg {
     animation: spin 1s linear infinite;
   }
   

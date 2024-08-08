@@ -30,7 +30,7 @@ const ForgotPassword = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     // Assume login is successful
-    navigate("/otp");
+    navigate("/newpassword");
   };
 
   return (
@@ -72,9 +72,9 @@ const ForgotPassword = () => {
                 <div className="btn-group">
                   <button className="btn">Send OTP</button>
                   <Link to="/" type="submit" className="back-btn">
-              <IoArrowBack size={25} />
-              Back
-            </Link>
+                       <IoArrowBack size={25} />
+                          Back
+                  </Link>
                 </div>
               </Form>
             )}
