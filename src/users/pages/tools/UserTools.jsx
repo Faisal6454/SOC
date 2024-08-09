@@ -61,7 +61,7 @@ const UserTools = () => {
               <strong>Click to upload</strong> or drag and drop file
             </p>
             <button onClick={notify} className="upload-button">Upload File</button>
-            <ToastContainer position="top-center" />
+            <ToastContainer stacked position="top-center" />
           </label>
           <p className="upload-info">
             <span>📄 Maximum file size: 50 MB</span>
